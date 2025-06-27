@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es-arg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulce Café - Contacto</title>
+  <link rel="stylesheet" href="./Assets/CSS/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1><a href="/">Dulce</a></h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="./galeria.html">Galería</a></li>
+        <li><a href="./sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="./tienda.html">Tienda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="formulario-contacto">
+      <h2>Contacto</h2>
+      <p>¿Querés hacer una consulta o dejarnos un mensaje? Escribinos y te respondemos a la brevedad.</p>
+      
+      <form action="https://formsubmit.co/tu-correo@ejemplo.com" method="POST">
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div>
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <h3>All rights reserved</h3>
+    </div>
+    <div>
+      <h3>design by Nico Pizarro</h3>
+    </div>
+  </footer>
+</body>
+</html>
