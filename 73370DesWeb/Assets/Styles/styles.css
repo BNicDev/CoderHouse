@@ -23,7 +23,7 @@
   }
 .nav-container {
     width: 100%;
-    height: 60px;
+    min-height: 60px;
     background-color: var(--first-color);
     color: var(--first-text-color);
     display: flex;
@@ -139,7 +139,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    min-height: 500px;
     background-color: var(--third-color);
     margin-top: 5px;
 }
@@ -149,7 +149,7 @@
 }
 .cards{
     width: 100%;
-    height: 400px;
+    min-height: 400px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -182,4 +182,25 @@
 }
 .card p{
     text-align: center;
+}
+
+/*seccion de footer*/
+footer{
+    margin-top: 5px;
+    background-color: var(--first-color);
+    min-height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--third-color);
+}
+.derechos h3{
+    margin: 0;
+    font-size: small;
+    padding: 10px;
+}
+.designby h3{
+    margin: 0;
+    font-size: small;
+    padding: 10px;
 }
