@@ -183,6 +183,73 @@
 .card p{
     text-align: center;
 }
+/*seccion de contacto*/
+.formulario-contacto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--first-color);
+    background-color: var(--third-color);
+    margin: 5px 0;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--first-color);
+    border-radius: 10px;
+    color: var(--third-color);
+    width: 300px;
+    height: 200px;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.datos{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.datos input{
+    border-radius: 5px;
+    border: none;
+}
+
+/*sobre nosotros*/
+.sobre-nosotros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--first-color);
+    background-color: var(--third-color);
+    padding: 60px 40px;
+}
+
+.sobre-nosotros h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.sobre-nosotros p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: center;
+    max-width: 800px; 
+    margin-left: auto;   
+    margin-right: auto;
+}
+
+/* seccion tienda */
+.product-card img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+.product-card h3{
+    margin-bottom: 0;
+}
 
 /*seccion de footer*/
 footer{
@@ -239,7 +306,6 @@ footer{
 
     .intro-text{
         text-align: center;
-        justify-content: center;
         width: 100%;
     }
 
@@ -254,5 +320,23 @@ footer{
     }
     .card{
         margin-bottom: 10px;
+    }
+
+    .sobre-nosotros {
+        padding: 40px 15px; /* Menos padding lateral para móviles */
+    }
+
+    footer {
+        flex-direction: column; 
+        text-align: center;    
+        padding: 10px 0;       
+        min-height: auto;      
+    }
+
+    .derechos h3,
+    .designby h3 {
+        padding: 5px 10px;     
+        font-size: 0.8rem;     
+        margin: 5px 0;        
     }
 }

@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dulce Café - Contacto</title>
-  <link rel="stylesheet" href="./Assets/CSS/styles.css">
+  <link rel="stylesheet" href="/Assets/Styles/styles.css">
 </head>
 <body>
-  <header>
+  <header class="nav-container">
     <div class="logo">
-      <h1><a href="/">Dulce</a></h1>
+      <h1><a href="/index.html">Dulce</a></h1>
     </div>
     <nav>
-      <ul>
-        <li><a href="./galeria.html">Galería</a></li>
-        <li><a href="./sobre-nosotros.html">Sobre Nosotros</a></li>
-        <li><a href="./tienda.html">Tienda</a></li>
+      <ul class="nav-list">
+        <li class="u-item"><a href="./galeria.html">Galería</a></li>
+        <li class="u-item"><a href="./sobre-nosotros.html">Sobre Nosotros</a></li>
+        <li class="u-item"><a href="./tienda.html">Tienda</a></li>
       </ul>
     </nav>
   </header>
@@ -25,34 +25,34 @@
       <h2>Contacto</h2>
       <p>¿Querés hacer una consulta o dejarnos un mensaje? Escribinos y te respondemos a la brevedad.</p>
       
-      <form action="https://formsubmit.co/tu-correo@ejemplo.com" method="POST">
-        <div>
+      <form action="https://formsubmit.co/tu-correo@ejemplo.com" method="POST" class="formulario">
+        <div class="datos">
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required>
         </div>
 
-        <div>
+        <div class="datos">
           <label for="email">Correo electrónico:</label>
           <input type="email" id="email" name="email" required>
         </div>
 
-        <div>
+        <div class="datos">
           <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          <input type="text" id="message" name="message" required>
         </div>
 
-        <button type="submit">Enviar mensaje</button>
+        <button type="submit" class="btn-vermas">Enviar mensaje</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <div>
-      <h3>All rights reserved</h3>
+    <div class="derechos">
+        <h3>All rights reserved</h3>
     </div>
-    <div>
-      <h3>design by Nico Pizarro</h3>
+    <div class="designby">
+        <h3>design by Nico Pizarro</h3>
     </div>
-  </footer>
+</footer>
 </body>
 </html>
