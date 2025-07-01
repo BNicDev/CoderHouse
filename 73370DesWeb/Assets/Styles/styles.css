@@ -19,7 +19,7 @@
   body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Esto evita el scroll lateral */
+    overflow-x: hidden; 
   }
 .nav-container {
     width: 100%;
@@ -203,4 +203,56 @@ footer{
     margin: 0;
     font-size: small;
     padding: 10px;
+}
+
+/*responsive design*/
+
+@media (max-width: 768px) {
+    body{
+        padding-top: 60px;
+    }
+    .nav-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+    .nav-list{
+        display: none;
+    }
+
+
+    .intro-container{
+        width: 100%;
+        max-width: none;
+        flex: none;
+        flex-direction: column;
+    }
+
+    
+    .intro-img img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .intro-text{
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .destacados{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cards{
+        flex-direction: column;
+        width: 100%;
+    }
+    .card{
+        margin-bottom: 10px;
+    }
 }
