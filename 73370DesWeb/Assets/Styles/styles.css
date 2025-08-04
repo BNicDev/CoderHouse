@@ -272,6 +272,12 @@ footer{
     padding: 10px;
 }
 
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+  }
+
 /*responsive design*/
 
 @media (max-width: 768px) {
@@ -325,6 +331,11 @@ footer{
     .sobre-nosotros {
         padding: 40px 15px; /* Menos padding lateral para móviles */
     }
+
+    .carousel-item img {
+        height: 300px;
+    }
+    
 
     footer {
         flex-direction: column; 
