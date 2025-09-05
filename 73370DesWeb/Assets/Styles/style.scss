@@ -1,14 +1,11 @@
 // Variables
-// -----------------------------
 $first-color: #734444;
 $second-color: #c37857;
 $third-color: #eeedbe;
 $fourth-color: #99b27f;
 $first-text-color: #ffffff;
 
-// -----------------------------
 // Mixins
-// -----------------------------
 @mixin flex-center($direction: row, $gap: 0) {
   display: flex;
   flex-direction: $direction;
@@ -17,9 +14,7 @@ $first-text-color: #ffffff;
   gap: $gap;
 }
 
-// -----------------------------
 // Reset
-// -----------------------------
 * {
   box-sizing: border-box;
 }
@@ -31,9 +26,7 @@ body {
   font-family: 'Poppins', sans-serif !important;
 }
 
-// -----------------------------
 // Navbar
-// -----------------------------
 .nav-container {
   width: 100%;
   min-height: 60px;
@@ -58,7 +51,6 @@ body {
     }
   }
 
-  // Agregamos un contenedor para mobile
   .nav-mobile {
     @include flex-center(row);
     .nav-list {
@@ -85,12 +77,10 @@ body {
     }
   }
 
-  // Ocultamos el checkbox por defecto en todos lados
   .menu-toggle-input {
     display: none;
   }
 
-  // Estilamos el label que actuará como botón, pero lo ocultamos en desktop
   .menu-toggle-label {
     display: none;
     color: $first-text-color;
@@ -100,9 +90,7 @@ body {
   }
 }
 
-// -----------------------------
 // Botón base
-// -----------------------------
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -123,9 +111,7 @@ body {
   }
 }
 
-// -----------------------------
 // Sección Intro
-// -----------------------------
 .intro-container {
   width: 100%;
   min-height: 400px;
@@ -165,9 +151,7 @@ body {
   }
 }
 
-// -----------------------------
 // Destacados
-// -----------------------------
 .destacados {
   @include flex-center(column);
   min-height: 500px;
@@ -188,7 +172,7 @@ body {
     flex-wrap: wrap;
 
     .card {
-      @extend .btn; // usamos extend para dar base de padding/radius
+      @extend .btn;
       @include flex-center(column);
       width: 300px;
       height: 320px;
@@ -219,9 +203,7 @@ body {
   }
 }
 
-// -----------------------------
 // Contacto
-// -----------------------------
 .formulario-contacto {
   @include flex-center(column);
   color: $first-color;
@@ -252,9 +234,7 @@ body {
   }
 }
 
-// -----------------------------
 // Sobre nosotros
-// -----------------------------
 .sobre-nosotros {
   @include flex-center(column);
   color: $first-color;
@@ -277,9 +257,7 @@ body {
   }
 }
 
-// -----------------------------
 // Tienda
-// -----------------------------
 .product-card {
   img {
     width: 150px;
@@ -292,9 +270,7 @@ body {
   }
 }
 
-// -----------------------------
 // Footer
-// -----------------------------
 footer {
   margin-top: 5px;
   background-color: $first-color;
@@ -311,109 +287,111 @@ footer {
   }
 }
 
-// -----------------------------
 // Carousel
-// -----------------------------
 .carousel-item img {
   height: 500px;
   object-fit: cover;
   width: 100%;
 }
-// -----------------------------
-// Responsive (CORRECCIÓN FINAL Y DEFINITIVA)
-// -----------------------------
 
-// Reglas para pantallas de hasta 768px (Mobile y Tablet)
+// Responsive 
 @media (max-width: 768px) {
   body {
-      padding-top: 60px;
+    padding-top: 60px;
   }
 
   .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+    
+    .nav-mobile {
+      flex-direction: column;
       position: fixed;
-      top: 0;
+      top: 60px;
       left: 0;
-      z-index: 1000;
-      padding: 0 20px;
-      flex-wrap: nowrap;
+      width: 100%;
+      height: 100vh;
+      background-color: $first-color;
       
-      .nav-mobile {
-          flex-direction: column;
-          position: fixed;
-          top: 60px;
-          left: 0;
-          width: 100%;
-          height: 100vh;
-          background-color: $first-color;
-          transform: translateX(100%);
-          transition: transform 0.3s ease-in-out;
-          padding-top: 20px;
-          align-items: flex-start;
-          gap: 20px;
-      }
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      padding-top: 20px;
+      align-items: flex-start;
+      gap: 20px;
+    }
 
-      // MOSTRAR el label (el botón de hamburguesa) solo en mobile
-      .menu-toggle-label {
-          display: block;
-          margin-left: auto;
-      }
+    
+    .menu-toggle-label {
+      display: block;
+      margin-left: auto;
+    }
 
-      // La magia: cuando el input está marcado, mueve el menú a la vista
-      .menu-toggle-input:checked ~ .nav-mobile {
-          transform: translateX(0);
-      }
+    .menu-toggle-input:checked ~ .nav-mobile {
+      transform: translateX(0);
+    }
   }
 
   .nav-list {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .intro-container {
-      flex-direction: column;
-      .intro-img img {
-          width: 100%;
-          height: auto;
-      }
-      .intro-text {
-          text-align: center;
-          width: 100%;
-      }
+    flex-direction: column;
+
+    .intro-img img {
+      width: 100%;
+      height: auto;
+    }
+
+    .intro-text {
+      text-align: center;
+      width: 100%;
+    }
   }
+
   .destacados,
   .cards {
-      flex-direction: column;
-      width: 100%;
+    flex-direction: column;
+    width: 100%;
   }
+
   .card {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
+
   .sobre-nosotros {
-      padding: 40px 15px;
+    padding: 40px 15px;
   }
+
   .carousel-item img {
-      height: 300px;
+    height: 300px;
   }
+
   footer {
-      flex-direction: column;
-      text-align: center;
-      padding: 10px 0;
-      min-height: auto;
-      .derechos h3,
-      .designby h3 {
-          padding: 5px 10px;
-          font-size: 0.8rem;
-          margin: 5px 0;
-      }
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+    min-height: auto;
+
+    .derechos h3,
+    .designby h3 {
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      margin: 5px 0;
+    }
   }
 }
 
-// Ocultar el botón de hamburguesa en pantallas grandes
 @media (min-width: 769px) {
   .menu-toggle-label {
-      display: none !important; // Agregamos !important para asegurar que se oculte
+    display: none;
   }
 
   .nav-mobile {
-      display: block; // Muestra el contenedor del menú en desktop
+    display: block;
   }
 }
