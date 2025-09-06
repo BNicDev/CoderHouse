@@ -140,6 +140,7 @@ body {
   min-height: 500px;
   background-color: #eeedbe;
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 .destacados h1 {
   font-size: 2rem;
@@ -184,6 +185,45 @@ body {
 }
 .destacados .cards .card p {
   text-align: center;
+}
+
+.local-container {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #eeedbe;
+  padding: 40px;
+}
+.local-container .local-img {
+  flex: 1;
+  max-width: 500px;
+  margin-left: 100px;
+}
+.local-container .local-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.local-container .intro-text {
+  flex: 1;
+  max-width: 600px;
+  color: #734444;
+}
+.local-container .intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.local-container .intro-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .formulario-contacto {

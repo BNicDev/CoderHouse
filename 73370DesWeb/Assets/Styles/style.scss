@@ -151,12 +151,14 @@ body {
   }
 }
 
+
 // Destacados
 .destacados {
   @include flex-center(column);
   min-height: 500px;
   background-color: $third-color;
   margin-top: 5px;
+  margin-bottom: 5px;
 
   h1 {
     font-size: 2rem;
@@ -202,6 +204,47 @@ body {
     }
   }
 }
+//Local 
+.local-container {
+  width: 100%;
+  min-height: 400px;
+  @include flex-center(row, 40px);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: $third-color;
+  padding: 40px;
+
+  .local-img {
+    flex: 1;
+    max-width: 500px;
+    margin-left: 100px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .intro-text {
+    flex: 1;
+    max-width: 600px;
+    color: $first-color;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  }
+}
+
 
 // Contacto
 .formulario-contacto {
