@@ -320,62 +320,67 @@ footer .designby h3 {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding-top: 60px;
-  }
   .nav-container {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     padding: 0 20px;
-    flex-wrap: nowrap;
   }
   .nav-container .nav-mobile {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: fixed;
-    top: 60px;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #734444;
+    background-color: rgba(115, 68, 68, 0.95);
+    backdrop-filter: blur(5px);
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    padding-top: 20px;
-    align-items: flex-start;
+    padding: 0;
+    gap: 20px;
+  }
+  .nav-container .nav-list {
+    flex-direction: column;
     gap: 20px;
   }
   .nav-container .menu-toggle-label {
     display: block;
-    margin-left: auto;
   }
   .nav-container .menu-toggle-input:checked ~ .nav-mobile {
     transform: translateX(0);
   }
-  .nav-list {
+  .intro-container, .local-container {
     flex-direction: column;
-  }
-  .intro-container {
-    flex-direction: column;
-  }
-  .intro-container .intro-img img {
-    width: 100%;
-    height: auto;
-  }
-  .intro-container .intro-text {
     text-align: center;
+    padding: 40px 20px;
+  }
+  .intro-container .intro-img, .intro-container .local-img, .local-container .intro-img, .local-container .local-img {
+    margin-left: 0;
+    margin-right: 0;
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+  }
+  .intro-container .intro-text, .local-container .intro-text {
+    flex: none;
     width: 100%;
   }
-  .destacados,
-  .cards {
+  .destacados h1 {
+    text-align: center;
+    padding: 0 15px;
+  }
+  .destacados .cards {
     flex-direction: column;
-    width: 100%;
+    gap: 20px;
   }
-  .card {
-    margin-bottom: 10px;
-  }
-  .sobre-nosotros {
-    padding: 40px 15px;
+  .destacados .card {
+    width: 90%;
+    max-width: 320px;
+    margin-bottom: 0;
   }
   .carousel-item img {
     height: 300px;
@@ -383,22 +388,14 @@ footer .designby h3 {
   footer {
     flex-direction: column;
     text-align: center;
-    padding: 10px 0;
-    min-height: auto;
+    padding: 20px 0;
+    gap: 10px;
   }
   footer .derechos h3,
   footer .designby h3 {
-    padding: 5px 10px;
-    font-size: 0.8rem;
-    margin: 5px 0;
-  }
-}
-@media (min-width: 769px) {
-  .menu-toggle-label {
-    display: none;
-  }
-  .nav-mobile {
-    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
   }
 }
 
