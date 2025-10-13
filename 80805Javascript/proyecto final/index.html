@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="./js/script.js"></script>
     <title>Gestion de Ventas</title>
 </head>
 <body>
@@ -11,9 +12,9 @@
         <div class="ham-menu">🍔Ordenes</div>
         <nav class="nav-bar">
             <ul class="nav-list">
-                <li>Activo</li>
-                <li>Completados</li>
-                <li><button>+</button></li>
+                <li class="active-orders-count">Activo (<span id="active-counter">0</span>)</li>
+                <li class="completed-orders-count">Completados (<span id="completed-counter">0</span>)</li>
+                <li><button class="addButton">+</button></li>
             </ul>
         </nav>
     </header>
@@ -24,5 +25,33 @@
     <main class="Main-section">
         <h3>PEDIDOS</h3>
     </main>
+     <section class="modal ">
+        <div class="modal__container">
+            <button class="modal__close-btn">X</button>
+            <img src="images/money-jar-22.svg" class="modal__img">
+            <h2 class="modal__title">Ingrese los Datos del pedido</h2>
+
+            <label for="product-select">Seleccione produicto:</label>
+            <select name="pets" id="product-select">
+            <option value="">Producto</option>
+            <option value="mediokilo">Miel 500gr</option>
+            <option value="kilo">Miel 1kg</option>
+            </select>
+
+            <label for="pet-select">Cantidad:</label>
+
+            <select name="pets" id="pet-select">
+            <option value="">seleccione cantidad</option>
+            <option value="uno">1</option>
+            <option value="dos">2</option>
+            <option value="tres">3</option>
+            <option value="cuatro">4</option>
+            <option value="cinco">5</option>
+            <option value="seis">6</option>
+            </select>
+            <a href="#" class="modal__close">Crear</a>
+        </div>
+    </section>
+
 </body>
 </html>
