@@ -7,19 +7,31 @@
     <title>Actividad Practica</title>
 </head>
 <body>
-    <h1>conversor de moneda</h1>
-    <form action="resultado.html" method="get">
-        <label for="cantidad">Cantidad en Pesos:</label>
-        <input type="number" id="cantidad" name="cantidad" step="0.01" required>
+    <h1>Conversor de Moneda</h1>
+    
+    <form id="conversionForm"> 
+        <label for="cantidad">Cantidad en Pesos (ARS):</label>
+        <input type="number" id="cantidad" name="cantidad" required min="1">
         <br><br>
         <label for="moneda">Convertir a:</label>
         <select id="moneda" name="moneda" required>
-            <option value="EUR">Euro (EUR)</option>
-            <option value="GBP">Libra Esterlina (GBP)</option>
-            <option value="JPY">Yen Japonés (JPY)</option>
-            <option value="MXN">Peso Mexicano (MXN)</option>
-        </select>
+            <option value="USD">Dolar(USD)</option>
+            <option value="EUR">Euro(EUR)</option>
+            <option value="BRL">Real(BRL)</option>
+            </select>
         <br><br>
-        <input type="submit" value="Convertir">
+        <input type="submit" value="Convertir" id="submitbtn">
+    </form>
+    
+    <hr>
+    
+    <h2>Resultado</h2>
+    <p id="resultadoTexto"></p>
+
+    <h2>Historial de Conversiones</h2>
+    <ul id="historialList">
+        </ul>
+    
+    <button id="clearHistoryBtn">Borrar Historial</button>
 </body>
 </html>
