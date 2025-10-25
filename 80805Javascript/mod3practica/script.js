@@ -1,4 +1,7 @@
+let historialConversiones = [];
+
 let formularioInformacion = document.getElementById('conversionForm');
+let deleteHistoryBtn = document.getElementById('clearHistoryBtn');
 
 formularioInformacion .addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -8,26 +11,45 @@ formularioInformacion .addEventListener('submit', (e)=>{
 
     const cantidadPesos = parseFloat(cantidadInput.value);
     const divisa = selectMoneda.value
-    
-    let conversionFinal = exchange(divisa,cantidadPesos)
 
-    console.log(conversionFinal)
 
+    if(cantidadPesos >=1){
+        exchange(divisa,cantidadPesos);
+    }else{
+        alert('no ingreso ninguna valor')
+    }
 });
 
 let exchange =(d,c)=>{
-    for(let i=0; i<valores.length; i++){
+
+    let transacciones = {
+        montoArs: c,
+        monedaDestino: d,
+    }
+
+
+    for(let i=0; i<valores.length; i++){                                                                    
         if(d==valores[i].moneda){
             let convertido =  c * valores[i].precio
-            alert(convertido)
+            if(convertido){
+                alert(`compraste $ ${convertido} ${valores[i].moneda}`)
+                localStorage.setItem('transaccion', `${convertido}`)
+                historialConversiones.push(transacciones);
+                console.log(historialConversiones)
+            }
         }
     }
 }
 
+deleteHistoryBtn.addEventListener('click', ()=>{
+        localStorage.removeItem('transaccion')
+    })
+
+let finalExchange =(d,conv)=>{
+}
 const valores = [
     {id: 1, moneda:'USD', precio: 1570},
     {id: 2, moneda:'EUR', precio: 1730},
     {id: 3, moneda:'BRL', precio: 240},
 ]
 
-console.log(valores)
