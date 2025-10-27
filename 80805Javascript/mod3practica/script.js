@@ -35,7 +35,8 @@ let exchange =(d,c)=>{
                 alert(`compraste $ ${convertido} ${valores[i].moneda}`)
                 localStorage.setItem('transaccion', `${convertido}`)
                 historialConversiones.push(transacciones);
-                console.log(historialConversiones)
+                let ordenado = acomodarHistorial(historialConversiones);
+                console.log(ordenado);
             }
         }
     }
@@ -46,6 +47,10 @@ deleteHistoryBtn.addEventListener('click', ()=>{
     })
 
 let finalExchange =(d,conv)=>{
+}
+let acomodarHistorial =(i)=>{
+    let historialacomodado = i.sort((a,b)=> b.montoArs - a.montoArs);
+    return historialacomodado;
 }
 const valores = [
     {id: 1, moneda:'USD', precio: 1570},
