@@ -1,7 +1,11 @@
 let historialConversiones = [];
-
+let contadorId = 1;
 let formularioInformacion = document.getElementById('conversionForm');
 let deleteHistoryBtn = document.getElementById('clearHistoryBtn');
+let historyContainer = document.getElementById('historialList');
+let ordenarBoton = document.getElementById('ordenarHistorialBtn');
+let nuevaTransaccion = document.createElement('li');
+
 
 formularioInformacion .addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -23,6 +27,7 @@ formularioInformacion .addEventListener('submit', (e)=>{
 let exchange =(d,c)=>{
 
     let transacciones = {
+        id: contadorId++,
         montoArs: c,
         monedaDestino: d,
     }
@@ -32,21 +37,44 @@ let exchange =(d,c)=>{
         if(d==valores[i].moneda){
             let convertido =  c * valores[i].precio
             if(convertido){
-                alert(`compraste $ ${convertido} ${valores[i].moneda}`)
-                localStorage.setItem('transaccion', `${convertido}`)
+                transacciones.convertido = convertido;
                 historialConversiones.push(transacciones);
-                let ordenado = acomodarHistorial(historialConversiones);
-                console.log(ordenado);
+                localStorage.setItem('transaccion', JSON.stringify(historialConversiones));
+                historialtransacciones(historialConversiones);
+                acomodarHistorial(historialConversiones);
             }
         }
     }
 }
 
 deleteHistoryBtn.addEventListener('click', ()=>{
-        localStorage.removeItem('transaccion')
+        localStorage.removeItem('transaccion');
+        historialConversiones = [];
+        contadorId = 1;
+        historyContainer.innerHTML = '';
     })
 
-let finalExchange =(d,conv)=>{
+ordenarBoton.addEventListener('click', ()=>{
+    acomodarHistorial(historialConversiones);
+    historialtransacciones(historialConversiones)
+})
+
+let historialtransacciones = (h)=>{
+    historyContainer.innerHTML = ''
+    for(let i = 0; i<h.length; i++){
+        const nuevoItem = document.createElement('li');
+        nuevoItem.innerHTML = `
+        <div>
+            <h4>transaccion n${h[i].id}</h4>
+            <p>Moneda Elegida: ${h[i].monedaDestino}</p>
+            <p>Monto en ARS: ${h[i].montoArs}</p>
+            <p>Monto convertido a ${h[i].monedaDestino}: ${h[i].convertido}</p>
+
+        </div>
+    `
+    historyContainer.appendChild(nuevoItem)
+
+    }
 }
 let acomodarHistorial =(i)=>{
     let historialacomodado = i.sort((a,b)=> b.montoArs - a.montoArs);

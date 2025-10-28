@@ -108,18 +108,45 @@ h2 {
     max-width: 450px;
 }
 
-#resultadoTexto {
-    background-color: #e9ecef;
-    padding: 15px;
-    border-radius: 6px;
-    text-align: center;
-    font-size: 1.1rem;
-    width: 100%;
-    max-width: 450px;
-    margin-bottom: 20px;
-    color: var(--color-text);
+.historial-header {
+    display: flex;             
+    align-items: center;      
+    justify-content: space-between; 
+    margin-bottom: 15px;       
+    padding: 0 5px;            
 }
 
+.historial-header h3 {
+    margin: 0;                
+    color: #333;
+    font-size: 1.5em;
+}
+
+.order-button {
+    background-color: #5a57a8;
+    color: white;            
+    border: none;
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    cursor: pointer;           
+    transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #4a4798; 
+}
+
+
+#historialList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
 #historialList {
     list-style: none;
     padding: 0;
@@ -173,16 +200,4 @@ h2 {
     h2 {
         max-width: 550px;
     }
-
-    /* Permite que los inputs de cantidad y moneda estén en una sola fila*/
-    /*
-    .form-row {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 10px;
-    }
-    .form-group {
-        flex: 1;
-    }
-    */
 }
